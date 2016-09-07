@@ -1,6 +1,6 @@
 language: csharp
 solution: APIMATICCalculatorTestcases.sln
-install:
+before_script:  
   - nuget restore APIMATICCalculatorTestcases.sln
   - nuget install NUnit.Runners -Version 3.2.1 -OutputDirectory testrunner
 script:
