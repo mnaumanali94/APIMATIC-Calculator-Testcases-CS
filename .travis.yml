@@ -1,0 +1,8 @@
+language: csharp
+solution: APIMATICCalculatorTestcases.sln
+install:
+  - nuget restore APIMATICCalculatorTestcases.sln
+  - nuget install NUnit.Runners -Version 3.2.1 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release APIMATICCalculatorTestcases.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.2.1/tools/nunit3-console.exe ./APIMATICCalculatorTestcases.Tests/bin/Release/APIMATICCalculatorTestcases.Tests.dll
